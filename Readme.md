@@ -95,7 +95,49 @@ b. Create .bash_profile file
      $ git commit -a -m 'Modified Readme.md and app/components/Examples.jsx'
      $ git status
 
+- For new files:
+     ```
+     $ git status
+     $ git add .
+     $ git commit -m 'Added [newfile]'
+     $ git status
 
+
+
+# SSH Key and Github (https://github.com/Sukumi)
+- Check for available keys
+     ```
+     $ ls -al ~/.ssh
+
+- Create Key
+     ```
+     $ ssh-keygen -t rsa -b 4096 -C 'ceta@protonmail.com'
+     $ ls -al ~/.ssh
+
+- check for running ssh-agent (true if pid returned)
+     ```
+     $ eval "$(ssh-agent -s)"
+
+- add key to ssh-agent
+     ```
+     $ ssh-add ~/.ssh/id_rsa
+
+- add public key to github (copy output from more command to github ssh key field)
+     ```
+     $ more ~/.ssh/id_rsa.pub
+
+- add github.com to the ~/.ssh/known_hosts file
+    ```
+    $ ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
+- check ssh key with github setup properly
+     ```
+     $ ssh -T git@github.com
+
+- Create a new repo on github via web interface or command line
+     ```
+     $ git remote add orrigin git@github.com/sukumi/react-weather.comit
+     $ git push -u origin master
 
 #Do
 
