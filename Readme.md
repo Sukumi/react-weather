@@ -150,13 +150,28 @@ b. Create .bash_profile file
      ```
      $ git branch
 
-- Push changes to remote resp. github
+- Push changes to remote resp. github git
      ```
-     $ git push
+     $ git push //or:
+     $ git push remote origin
 
 - Remove file from repo
      ```
      $ git rm --cached react-weather.iml
+
+#Heroku
+
+- Install heroku toolbelt (toolbelt.heroku.com)
+
+- Run in terminal
+     ```
+     $ heroku
+     $ heroku auth:whoami
+
+- Run in terminal
+     ```
+     $ heroku
+     $ heroku auth:whoami
 
 
 #Do

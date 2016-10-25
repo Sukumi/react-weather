@@ -4,7 +4,7 @@
   "description": "React boilerplate",
   "private": true,
   "scripts": {
-    "start": "node ./server.js",
+    "start": "node server.js",
     "test": "echo \"Error: No tests specified\" && exit 1"
   },
   "dependencies": {
