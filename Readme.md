@@ -154,7 +154,9 @@ b. Create .bash_profile file
      ```
      $ git push
 
-
+- Remove file from repo
+     ```
+     $ git rm --cached react-weather.iml
 
 
 #Do
