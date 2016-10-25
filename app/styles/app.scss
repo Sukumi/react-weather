@@ -1,0 +1,26 @@
+$space-large: 1.5em;
+$primary-color: cadetblue;
+$title-color: $primary-color;
+
+//override foundation .primary-color class
+.primary-color{
+  color: $primary-color;
+}
+
+//override foundation .button class
+.button{
+  background-color: $primary-color;
+}
+
+.react-app-page-title{
+  color: $title-color;
+  margin-top: $space-large;
+  margin-bottom: $space-large;
+}
+
+input[type=search]{
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  -webkit-box-shadow: none;
+}
