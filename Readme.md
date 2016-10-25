@@ -62,7 +62,7 @@ b. Create .bash_profile file
      ```
      $ touch .gitignore
 
-- append folder node_modules/ .idea/ .DS_Store .gitignore
+- append folder node_modules/ .idea/ .DS_Store to .gitignore
      ```
      $ echo "node_modules/" >>.gitignore
      $ echo ".idea/" >>.gitignore
@@ -84,6 +84,17 @@ b. Create .bash_profile file
      $ git add .
      $ git status
      
+- commit all files
+     ```
+     $ git commit -m 'Initial commit'
+     $ git status
+
+- After new changes have been made you regulary have to add and commit the changed file. A shortcut is:
+     ```
+     $ git status
+     $ git commit -a -m 'Modified Readme.md and app/components/Examples.jsx'
+     $ git status
+
 
 
 #Do
