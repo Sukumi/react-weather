@@ -149,6 +149,10 @@ b. Create .bash_profile file
 - check branch
      ```
      $ git branch
+
+- Push changes to remote resp. github
+     ```
+     $ git push
 #Do
 
 (1) npm install
