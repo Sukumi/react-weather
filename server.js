@@ -7,12 +7,12 @@ var express = require('express');
 var app = express();
 const PORT = process.env.PORT || 3000;
 
-//Redirect https to http
+//Redirect https to http (considers also localhost
 app.use(function(req, res, next){
-    if(req.headers['x-forwarded-proto'] === 'http'){
-        next();
-    }else{
+    if(req.headers['x-forwarded-proto'] === 'https'){
         res.redirect('http://' + req.hostname + req.url);
+    }else{
+        next();
     }
 })
 
