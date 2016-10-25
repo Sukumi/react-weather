@@ -153,6 +153,10 @@ b. Create .bash_profile file
 - Push changes to remote resp. github
      ```
      $ git push
+
+
+
+
 #Do
 
 (1) npm install
