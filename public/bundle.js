@@ -28241,9 +28241,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _fixerIo = __webpack_require__(264);
+	var _fixerIo = __webpack_require__(263);
 	
-	var _currencyManager = __webpack_require__(263);
+	var _currencyManager = __webpack_require__(264);
 	
 	var _currencyManager2 = _interopRequireDefault(_currencyManager);
 	
@@ -28398,6 +28398,63 @@
 /* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.getExchangeRate = getExchangeRate;
+	
+	var _axios = __webpack_require__(237);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	//Module private const
+	var FIXER_IO_URL = 'http://api.fixer.io/latest';
+	
+	var axios_response_debug = function axios_response_debug(response) {
+	    console.log('response: ' + response.status + ': ' + response.data);
+	    console.log('headers: ' + response.headers);
+	    console.log('config: ' + response.config);
+	};
+	
+	function getExchangeRate(from, to) {
+	    var encodedFromCurrency = encodeURIComponent(from);
+	    var encodedToCurrency = encodeURIComponent(to);
+	    var requestUrl = FIXER_IO_URL + '?base=' + encodedFromCurrency + '&symbols=' + encodedToCurrency;
+	
+	    console.log('fixer.io request: ' + requestUrl);
+	    //set breakpoint with: debugger;
+	    //debugger;
+	    return _axios2.default.get(requestUrl).then(function (response) {
+	        if (response.data.cod && response.data.message) {
+	            axios_response_debug(response);
+	            throw new Error(response.data.message);
+	        } else {
+	            axios_response_debug(response);
+	            return response.data.rates[to];
+	        }
+	    }, function (reject) {
+	        /*if(response.data && response.data.message){
+	         console.error(response.data.message);
+	         throw new Error(response.data.message);
+	         }*/
+	        if (reject instanceof Error) {
+	            console.error('response instanceof Error: ' + reject.number + ':' + reject.message);
+	            throw new Error(reject.message);
+	        } else {
+	            axios_response_debug(reject);
+	            throw new Error(reject.data.message);
+	        }
+	    });
+	}
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -28407,7 +28464,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _fixerIo = __webpack_require__(264);
+	var _fixerIo = __webpack_require__(263);
 	
 	var _fixerIo2 = _interopRequireDefault(_fixerIo);
 	
@@ -28706,63 +28763,6 @@
 	exports.default = CurrencyManager;
 
 /***/ },
-/* 264 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.getExchangeRate = getExchangeRate;
-	
-	var _axios = __webpack_require__(237);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	//Module private const
-	var FIXER_IO_URL = 'http://api.fixer.io/latest';
-	
-	var axios_response_debug = function axios_response_debug(response) {
-	    console.log('response: ' + response.status + ': ' + response.data);
-	    console.log('headers: ' + response.headers);
-	    console.log('config: ' + response.config);
-	};
-	
-	function getExchangeRate(from, to) {
-	    var encodedFromCurrency = encodeURIComponent(from);
-	    var encodedToCurrency = encodeURIComponent(to);
-	    var requestUrl = FIXER_IO_URL + '?base=' + encodedFromCurrency + '&symbols=' + encodedToCurrency;
-	
-	    console.log('fixer.io request: ' + requestUrl);
-	    //set breakpoint with: debugger;
-	    //debugger;
-	    return _axios2.default.get(requestUrl).then(function (response) {
-	        if (response.data.cod && response.data.message) {
-	            axios_response_debug(response);
-	            throw new Error(response.data.message);
-	        } else {
-	            axios_response_debug(response);
-	            return response.data.rates[to];
-	        }
-	    }, function (reject) {
-	        /*if(response.data && response.data.message){
-	         console.error(response.data.message);
-	         throw new Error(response.data.message);
-	         }*/
-	        if (reject instanceof Error) {
-	            console.error('response instanceof Error: ' + reject.number + ':' + reject.message);
-	            throw new Error(reject.message);
-	        } else {
-	            axios_response_debug(reject);
-	            throw new Error(reject.data.message);
-	        }
-	    });
-	}
-
-/***/ },
 /* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -28875,7 +28875,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _currencyManager = __webpack_require__(263);
+	var _currencyManager = __webpack_require__(264);
 	
 	var _currencyManager2 = _interopRequireDefault(_currencyManager);
 	

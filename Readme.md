@@ -168,11 +168,23 @@ b. Create .bash_profile file
      $ heroku
      $ heroku auth:whoami
 
-- Run in terminal
+- Create new heroku app and check new reomote added by heroku
      ```
-     $ heroku
-     $ heroku auth:whoami
+     $ heroku create
+     $ git remote -v //last: https://floating-sea-86260.herokuapp.com/ | https://git.heroku.com/floating-sea-86260.git
 
+- Adapt app to fit with heroku requirements
+     ```
+     1. Adapt package.json to add a start script entry => start server.js
+     2. Adapt server.js a) feed port from env var b) redirect https to http (due to lack of https in our heroku)
+     
+- Push local repo master to heroku remote
+     ```
+     $ git push heroku master
+
+- View the app in the default browser
+     ```
+     $ heroku open
 
 #Do
 
