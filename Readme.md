@@ -136,9 +136,19 @@ b. Create .bash_profile file
 
 - Create a new repo on github via web interface or command line
      ```
-     $ git remote add orrigin git@github.com/sukumi/react-weather.comit
+     $ git remote -v //view current remotes
+     $ git remote add origin git@github.com/Sukumi/react-weather.git //http
+     $ git remote add origin git@github.com:Sukumi/react-weather.git //ssh
      $ git push -u origin master
 
+- view/add/remove remotes [Managing Remotes][6001]
+     ```
+     $ git remote -v //view current remotes
+     $ git remote rm origin 
+
+- check branch
+     ```
+     $ git branch
 #Do
 
 (1) npm install
@@ -323,4 +333,7 @@ We use Foundations because its supports
 [4002]: http://openweathermap.org/
 
 [5001]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+
+[6000]: https://help.github.com/
+[6001]: https://help.github.com/categories/managing-remotes/
 
