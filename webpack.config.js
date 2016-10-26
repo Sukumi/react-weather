@@ -60,8 +60,8 @@ module.exports = {
             },
             {
                 loader: "url-loader",
-                test: /\.png$/,
-                query: { mimetype: "image/png" }
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                query: { mimetype: "image/[ext]" }
             }
 
         ]

@@ -243,12 +243,19 @@ b. IntelliJ IDEA Universal with JS support
     b. webpack: script-loader@0.6.1
     c. webpack: style-loader@0.13.0
     d. webpack: sass-loader@3.1.2
-    e. node-sass@3.4.2
-    f. foundation-sites@6.2.0
-    g. jquery@2.2.1
+    e. webpack: file-loader@0.9.0
+    f. webpack: url-loader@0.5.7
+    g. node-sass@3.4.2
+    h. foundation-sites@6.2.0
+    i. jquery@2.2.1
     
     npm install --save-dev css-loader@0.23.1 script-loader@0.6.1 style-loader@0.13.0 jquery@2.2.1 foundation-sites@6.2.0
-    npm install --save-dev node-sass@3.4.2 sass-loader@3.1.2 
+    npm install --save-dev node-sass@3.4.2 sass-loader@3.1.2
+    npm install --save-dev file-loader@0.9.0 url-loader@0.5.7
+
+    Url-Loader:
+        works either by config or the require function:
+        require(url!../img/test.png)
     
 #Babel ES2015 + latest ES6 features like ...
 
