@@ -28917,7 +28917,6 @@
 	                items.push(_react2.default.createElement(
 	                    'option',
 	                    { key: key, value: key },
-	                    _react2.default.createElement('img', { src: "img/flags/ad.png" }),
 	                    curr.name
 	                ));
 	            }
@@ -29564,10 +29563,16 @@
 	
 	
 	// module
-	exports.push([module.id, ".primary-color {\n  color: cadetblue; }\n\n.button {\n  background-color: cadetblue; }\n\n.react-app-page-title {\n  color: cadetblue;\n  margin-top: 1.5em;\n  margin-bottom: 1.5em; }\n\ninput[type=search] {\n  box-shadow: none;\n  -moz-box-shadow: none;\n  -o-box-shadow: none;\n  -webkit-box-shadow: none; }\n", ""]);
+	exports.push([module.id, ".primary-color {\n  color: cadetblue; }\n\n.button {\n  background-color: cadetblue; }\n\n.react-app-page-title {\n  color: cadetblue;\n  margin-top: 1.5em;\n  margin-bottom: 1.5em; }\n\ninput[type=search] {\n  box-shadow: none;\n  -moz-box-shadow: none;\n  -o-box-shadow: none;\n  -webkit-box-shadow: none; }\n\nselect option {\n  background: transparent url(" + __webpack_require__(276) + ") no-repeat 0 0; }\n", ""]);
 	
 	// exports
 
+
+/***/ },
+/* 276 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAADxSURBVHjapJO7TgMxEEWP196EVUARFGlSpkb0NPwDDd9Iw78AJSVKQ0FgFzl+yB6aJCydndxmZMn3+Ho0o0SEU6SACXC+qzUKwI8B5uv7h49jXl8+PS4MMJOUmN5cF0ZWCIJ/fgWYGUBLjMgwkD43/2/L6KMj6atLJEYAbQCS9+Tvntz3ZSm0Jnl3OK+stVIra60AqwbAe1/dwL2nAXDOVQP2HgPwdnuHayfk7bbI3HQd7zH8AVwIiGlBqSKAiODCCOC9h7MO1bZl+XM+9MAAIYnw8rU5ZhiDAubAErioNA/AWgF6t0i6EpCAoE5d598BAA4KlfCaWGH0AAAAAElFTkSuQmCC"
 
 /***/ }
 /******/ ]);

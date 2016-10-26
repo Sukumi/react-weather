@@ -2,6 +2,12 @@ $space-large: 1.5em;
 $primary-color: cadetblue;
 $title-color: $primary-color;
 
+
+
+@mixin backgroundMixin($imgpath,$position:0 0,$repeat: no-repeat) {
+  background: transparent url(#{$imgpath}) $repeat $position;
+}
+
 //override foundation .primary-color class
 .primary-color{
   color: $primary-color;
@@ -23,4 +29,9 @@ input[type=search]{
   -moz-box-shadow: none;
   -o-box-shadow: none;
   -webkit-box-shadow: none;
+}
+
+select option {
+  @include backgroundMixin("at.png");
+  //background-image: url("at.png");
 }

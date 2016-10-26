@@ -58,6 +58,11 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/
             },
+            {
+                loader: "url-loader",
+                test: /\.png$/,
+                query: { mimetype: "image/png" }
+            }
 
         ]
     },

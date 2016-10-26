@@ -22,7 +22,7 @@ export default class CurrencySelectionList extends React.Component {
         for (let key in currencies) {
             let curr = currencies[key];
 
-            items.push(<option key={key} value={key}><img src={"img/flags/ad.png"}/>{curr.name}</option>);
+            items.push(<option key={key} value={key}>{curr.name}</option>);
         }
         return items;
     }

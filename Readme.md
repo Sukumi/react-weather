@@ -1,23 +1,24 @@
 
-#Requirements
+#React Boilerplate
 
 (1) NodeJs et al
-    node: 5.12+
-    npm: 3.12+
-    webpack: 1.13.2+ (npm install -g webpack@1.13.2 ) (Note V.2 is not supported with our boilerplate yet)
-    babel-cli:
-
+    - node: 5.12+
+    - npm: 3.12+
+    - webpack: 1.13.2+ (npm install -g webpack@1.13.2 ) (Note V.2 is not supported with our boilerplate yet)
+    - babel-cli:
+    ``
     beside babel-preset-es2015 with babel-preset-stage-0 plugin also more advanced ES6 features
     are supported, i.e. the object spread operator ...
     http://babeljs.io/dncs/plugins
 
-   SASS (incl. SCSS syntax) 
-    npm install -g node-sass@3.4.2 
-   or
-   LESS
-        
+   - SASS (incl. SCSS syntax) 
+    ```
+       npm install -g node-sass@3.4.2
+    ```
+    
 (2) Git Bash (For windows user only)
-    a. Create .bashrc file with Node and npm in your path
+
+a. Create .bashrc file with Node and npm in your path
     
       #!/bin/bash
       export export PATH=$PATH:'/c/Program Files/nodejs':'/c/Users/Petzch/AppData/Roaming/npm'
@@ -41,59 +42,65 @@ b. Create .bash_profile file
         fi
         
 (3) Code Editor or IDE
-    a. Atom (IMO better than Brackets) or
-    b. IntelliJ IDEA Universal with JS support
-        - For Windows: 
-            1.  set Terminal to: i.e. 
-                "C:\Program Files (x86)\Git\bin\sh.exe" --login -i
-            2.  set Setting..Language&Tools..Javascript.. to ECMAScript 6
+
+a. Atom (IMO better than Brackets) or
+
+b. IntelliJ IDEA Universal with JS support
+- For Windows: 
+ 1.  set Terminal to: i.e. "C:\Program Files (x86)\Git\bin\sh.exe" --login -i
+ 2.  set Setting..Language&Tools..Javascript.. to ECMAScript 6
 
 
 
 (4) Integrate with git
 - open terminal and got to the project folder
 - run:
-    
      ```
      $ git init
      $ git status
-     
+     ```    
 - add .gitignore
      ```
      $ touch .gitignore
-
+     ```
 - append folder node_modules/ .idea/ .DS_Store to .gitignore
+
      ```
      $ echo "node_modules/" >>.gitignore
      $ echo ".idea/" >>.gitignore
      $ echo "public/.idea/" >>.gitignore
      $ echo ".DS_Store" >>.gitignore
+     ```
 
 - check status, so the ignorable folder/files should removed from the status
      ```
      $ git status
-     
+     ```
 - make the same for the public folder
      ```
      $ touch .gitignore
      $ echo ".idea/" >>.gitignore
+     ```
 
 - add files .gitignore and all the rest with .
      ```
      $ git add .gitignore
      $ git add .
      $ git status
+     ```
      
 - commit all files
      ```
      $ git commit -m 'Initial commit'
      $ git status
+     ```
 
 - After new changes have been made you regulary have to add and commit the changed file. A shortcut is:
      ```
      $ git status
      $ git commit -a -m 'Modified Readme.md and app/components/Examples.jsx'
      $ git status
+     ```
 
 - For new files:
      ```
@@ -101,38 +108,44 @@ b. Create .bash_profile file
      $ git add .
      $ git commit -m 'Added [newfile]'
      $ git status
-
-
+     ```
 
 # SSH Key and Github (https://github.com/Sukumi)
 - Check for available keys
      ```
      $ ls -al ~/.ssh
+     ```
 
 - Create Key
      ```
      $ ssh-keygen -t rsa -b 4096 -C 'ceta@protonmail.com'
      $ ls -al ~/.ssh
+     ```
 
 - check for running ssh-agent (true if pid returned)
      ```
      $ eval "$(ssh-agent -s)"
+     ```
 
 - add key to ssh-agent
      ```
      $ ssh-add ~/.ssh/id_rsa
+     ```
 
 - add public key to github (copy output from more command to github ssh key field)
      ```
      $ more ~/.ssh/id_rsa.pub
+     ```
 
 - add github.com to the ~/.ssh/known_hosts file
     ```
     $ ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+    ```
 
 - check ssh key with github setup properly
      ```
      $ ssh -T git@github.com
+     ```
 
 - Create a new repo on github via web interface or command line
      ```
@@ -140,24 +153,29 @@ b. Create .bash_profile file
      $ git remote add origin git@github.com/Sukumi/react-weather.git //http
      $ git remote add origin git@github.com:Sukumi/react-weather.git //ssh
      $ git push -u origin master
+     ```
 
 - view/add/remove remotes [Managing Remotes][6001]
      ```
      $ git remote -v //view current remotes
      $ git remote rm origin 
+     ```
 
 - check branch
      ```
      $ git branch
+     ```
 
 - Push changes to remote resp. github git
      ```
      $ git push //or:
      $ git push remote origin
+     ```
 
 - Remove file from repo
      ```
      $ git rm --cached react-weather.iml
+     ```
 
 #Heroku
 
@@ -167,24 +185,29 @@ b. Create .bash_profile file
      ```
      $ heroku
      $ heroku auth:whoami
+     ```
 
 - Create new heroku app and check new reomote added by heroku
      ```
      $ heroku create
      $ git remote -v //last: https://floating-sea-86260.herokuapp.com/ | https://git.heroku.com/floating-sea-86260.git
+     ```
 
 - Adapt app to fit with heroku requirements
      ```
      1. Adapt package.json to add a start script entry => start server.js
      2. Adapt server.js a) feed port from env var b) redirect https to http (due to lack of https in our heroku)
+     ```
      
 - Push local repo master to heroku remote
      ```
      $ git push heroku master
+     ```
 
 - View the app in the default browser
      ```
      $ heroku open
+     ```
 
 #Do
 
@@ -252,13 +275,14 @@ We use Foundations because its supports
 
 #Environemnt
 ##Javascript
-[MDN JavaScript][2]
-[Exploring ES6][3]
+1. [MDN JavaScript][2]
+2. [Exploring ES6][3]
+
 ####Promises
-[Promises 1][4]
-[Promises 2][5]
-[Promises 3][6]
-[Promises 4][7]
+1. [Promises 1][4]
+2. [Promises 2][5]
+3. [Promises 3][6]
+4. [Promises 4][7]
 
 ##Node and NPM
 [Nodejs][20]
