@@ -248,6 +248,7 @@ b. IntelliJ IDEA Universal with JS support
     g. node-sass@3.4.2
     h. foundation-sites@6.2.0
     i. jquery@2.2.1
+    j. socket.io@1.4.5
     
     npm install --save-dev css-loader@0.23.1 script-loader@0.6.1 style-loader@0.13.0 jquery@2.2.1 foundation-sites@6.2.0
     npm install --save-dev node-sass@3.4.2 sass-loader@3.1.2

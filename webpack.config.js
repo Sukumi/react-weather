@@ -43,6 +43,8 @@ module.exports = {
             CurrencySelectionList: 'app/components/CurrencySelectionList.jsx',
             CurrencyForm: 'app/components/CurrencyForm.jsx',
             ErrorModal: 'app/components/ErrorModal.jsx',
+            Chat: 'app/components/Chat.jsx',
+            ChatMessage: 'app/components/ChatMessage.jsx',
             CustomReactAppCSS: 'app/styles/app.css',
             CustomReactAppSASS: 'app/styles/app.scss'
         },

@@ -219,6 +219,9 @@ export default class Nav extends React.Component {
                         <li>
                             <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
                         </li>
+                        <li>
+                            <Link to="/chat" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Chat</Link>
+                        </li>
                     </ul>
                 </div>
                 <div className="top-bar-right">

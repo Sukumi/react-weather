@@ -5,6 +5,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// http://socket.io/docs/
+// http://stackoverflow.com/questions/34480703/implementing-socket-io-with-reactjs-es6
+// http://feathersjs.com/
+// https://github.com/feathersjs/feathers-reactive/tree/master/examples/react-todos
+// https://github.com/perminder-klair/feathersjs-react-js
+// https://github.com/yycjs/feathers-react
+// http://danialk.github.io/blog/2013/06/16/reactjs-and-socket-dot-io-chat-application/
+// http://aviadas.com/blog/2015/09/06/building-realtime-apps-with-react/
+// http://code.runnable.com/VOIYIALkqgAnHDmj/node-js-socket-io-and-react-js
+import io from 'socket.io-client'
+
+var socket = io(); // TIP: io() with no args does auto-discovery
+socket.on('connect', function () { // TIP: you can avoid listening on `connect` and listen on events directly too!
+    socket.emit('ferret', 'tobi', function (data) {
+        console.log(data); // data will be 'woot'
+    });
+});
+
 
 //Import react-router components: Route, Router, IndexRoute, hashHistory
 
@@ -56,6 +74,7 @@ import Weather from 'Weather';
 import Currency from 'Currency';
 import About from 'About';
 import Examples from 'Examples';
+import Chat from 'Chat';
 
 // Load & Init CSS Foundation
 import 'style!css!foundation-sites/dist/foundation.min.css';
@@ -74,6 +93,7 @@ ReactDOM.render(
             <Route path="currency" component={Currency}/>
             <Route path="about" component={About}/>
             <Route path="examples" component={Examples}/>
+            <Route path="chat" component={Chat}/>
             <IndexRoute component={Weather}/>
         </Route>
     </Router>,
